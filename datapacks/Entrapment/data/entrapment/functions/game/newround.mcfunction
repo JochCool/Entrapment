@@ -54,6 +54,6 @@ scoreboard players operation @e[type=armor_stand,name=Game] DangerTime > Ticks M
 execute at @e[type=armor_stand,name=Gate] positioned ~-2 ~ ~ run fill ~ ~ ~ ~14 255 ~5 minecraft:air replace minecraft:lava
 
 # Move world border away
-worldborder set 60000000
+worldborder set 59999968
 
 execute as @a at @s run playsound minecraft:block.note.pling master @s ~ ~ ~ 100 1 1

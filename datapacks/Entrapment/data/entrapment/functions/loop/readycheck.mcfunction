@@ -16,16 +16,16 @@ execute as @a[tag=NotReadyHelmet,tag=!WasNotReady] run tellraw @a [{"selector":"
 clear @a[tag=ReadyHelmet]
 clear @a[tag=NotReadyHelmet]
 
-replaceitem entity @a[team=!none] hotbar.0 air
-replaceitem entity @a[team=!none] hotbar.1 air
-replaceitem entity @a[team=!none] hotbar.2 air
-replaceitem entity @a[team=!none] hotbar.3 leather_helmet{display:{Name:"\"Ready\"",color:49152}}
-replaceitem entity @a[team=!none] hotbar.4 air
-replaceitem entity @a[team=!none] hotbar.5 leather_helmet{display:{Name:"\"Not Ready\"",color:2105376}}
-replaceitem entity @a[team=!none] hotbar.6 air
-replaceitem entity @a[team=!none] hotbar.7 air
-replaceitem entity @a[team=!none] hotbar.8 air
-replaceitem entity @a[team=!none] armor.head air
+item replace entity @a[team=!none] hotbar.0 with air
+item replace entity @a[team=!none] hotbar.1 with air
+item replace entity @a[team=!none] hotbar.2 with air
+item replace entity @a[team=!none] hotbar.3 with leather_helmet{display:{Name:"\"Ready\"",color:49152}}
+item replace entity @a[team=!none] hotbar.4 with air
+item replace entity @a[team=!none] hotbar.5 with leather_helmet{display:{Name:"\"Not Ready\"",color:2105376}}
+item replace entity @a[team=!none] hotbar.6 with air
+item replace entity @a[team=!none] hotbar.7 with air
+item replace entity @a[team=!none] hotbar.8 with air
+item replace entity @a[team=!none] armor.head with air
 
 # Set scores based on tags
 scoreboard players set @a[tag=ReadyHelmet] ReadyCheck 3

@@ -19,7 +19,7 @@ scoreboard players set @e[type=armor_stand,name=Game] ResetTime 80
 kill @e[name=NewNTChest]
 kill @e[name=NewPTChest]
 kill @e[type=shulker]
-worldborder set 60000000
+worldborder set 59999968
 
 # Make sure if someone disconnected during this game and reconnects during another
 # they become spectators:
