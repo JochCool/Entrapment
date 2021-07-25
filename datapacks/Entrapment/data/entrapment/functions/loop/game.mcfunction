@@ -146,7 +146,8 @@ clear @a totem_of_undying
 execute store result score @e[type=armor_stand,name=JoinBlue] Count if entity @a[team=blue,gamemode=!spectator]
 execute store result score @e[type=armor_stand,name=JoinRed] Count if entity @a[team=red,gamemode=!spectator]
 
-execute as @e[type=armor_stand,scores={Team=1..,Count=0},limit=1] run function entrapment:game/gamewon
+execute if entity @e[type=armor_stand,name=Game,scores={SingleTeam=0}] as @e[type=armor_stand,scores={Team=1..,Count=0},limit=1] run function entrapment:game/gamewon
+execute if entity @e[type=armor_stand,name=Game,scores={SingleTeam=1}] unless entity @e[type=armor_stand,scores={Team=1..,Count=1..}] run function entrapment:game/gameend
 
 # Protect lobby
 kill @e[type=!player,x=-70,y=0,z=100,dx=140,dy=512,dz=10]

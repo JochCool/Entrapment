@@ -16,6 +16,10 @@ title @a subtitle [{"text":"Equip the 'Ready' helmet when ready"}]
 tellraw @a [{"text":"Ready check!","color":"gold"}]
 tellraw @a [{"text":"Equip the 'Ready' helmet when ready"}]
 
+scoreboard players set @e[type=armor_stand,name=Game,limit=1] SingleTeam 0
+execute if entity @e[type=armor_stand,scores={Count=0}] run scoreboard players set @e[type=armor_stand,name=Game,limit=1] SingleTeam 1
+execute if entity @e[type=armor_stand,name=Game,scores={SingleTeam=1}] run tellraw @a {"text":"Playing the single-team version of the map."}
+
 scoreboard players reset * HeldReadyItem
 
 scoreboard players set @a[team=!none] ReadyCheck 1
