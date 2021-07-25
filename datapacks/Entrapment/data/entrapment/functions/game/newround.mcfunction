@@ -6,10 +6,11 @@ scoreboard players add @e[type=armor_stand,name=Game] Round 1
 scoreboard players set @e[type=armor_stand,name=Game,scores={Round=3}] Round 1
 
 # Team teleports
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=red,gamemode=!creative] -40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=blue,gamemode=!creative] -40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=red,gamemode=!creative] 40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=blue,gamemode=!creative] 40 236 -8 0 0
+execute if score @e[type=armor_stand,name=Game,limit=1] SingleTeam matches 1 run tp @a[team=!none] 40 236 -8 0 0
+execute as @e[type=armor_stand,name=Game,limit=1] if score @s SingleTeam matches 0 if score @s Round matches 1 run tp @a[team=red,gamemode=!creative] -40 236 -8 0 0
+execute as @e[type=armor_stand,name=Game,limit=1] if score @s SingleTeam matches 0 if score @s Round matches 2 run tp @a[team=blue,gamemode=!creative] -40 236 -8 0 0
+execute as @e[type=armor_stand,name=Game,limit=1] if score @s SingleTeam matches 0 if score @s Round matches 2 run tp @a[team=red,gamemode=!creative] 40 236 -8 0 0
+execute as @e[type=armor_stand,name=Game,limit=1] if score @s SingleTeam matches 0 if score @s Round matches 1 run tp @a[team=blue,gamemode=!creative] 40 236 -8 0 0
 execute as @a[gamemode=survival] run spawnpoint @s
 
 # Resistance effect to all players to get around bad interpolation causing withering effects
@@ -27,7 +28,7 @@ scoreboard players operation AddedTime TimeIncrease += @e[type=armor_stand,name=
 execute if score @e[type=armor_stand,name=Game,limit=1] MaxTimeAdded matches 1.. run scoreboard players operation AddedTime TimeIncrease < Seconds MaxTimeAdded
 
 # New chests
-summon armor_stand -60 255 0 {CustomName:"\"NewNTChest\"",Invisible:1}
+execute if entity @e[type=armor_stand,name=Game,scores={SingleTeam=0}] run summon armor_stand -60 255 0 {CustomName:"\"NewNTChest\"",Invisible:1}
 summon armor_stand 60 255 0 {CustomName:"\"NewPTChest\"",Invisible:1}
 scoreboard players reset @e[type=armor_stand,tag=Treasure] Selected
 scoreboard players reset @e[type=armor_stand,tag=TreasureCD] Selected

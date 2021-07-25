@@ -69,14 +69,15 @@ title @a[gamemode=survival,scores={OutOfMap=1}] title [{"text":"Return to the ar
 effect give @a[gamemode=survival,scores={OutOfMap=100..}] wither 1 2
 
 # Confine spectators
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=1,SingleTeam=1}] run teleport @a[gamemode=spectator,team=!none,scores={InArena=0}] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1,SingleTeam=0}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1,SingleTeam=0}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1,SingleTeam=0}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1,SingleTeam=0}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1,SingleTeam=0}] positioned 20 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1,SingleTeam=0}] positioned 20 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1,SingleTeam=0}] positioned -60 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1,SingleTeam=0}] positioned -60 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
 
 # Locked on player mode:
 execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] run tag @a[gamemode=spectator] remove spectatingplayer
@@ -86,10 +87,10 @@ execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] as @a[
 execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] as @a[gamemode=spectator,tag=!spectatingplayer,team=blue] at @s run spectate @p[team=blue,gamemode=survival]
 
 # Tp players in wrong arena (reconnects)
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned 20 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned 20 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned -60 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned -60 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SingleTeam=0}] positioned 20 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SingleTeam=0}] positioned 20 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SingleTeam=0}] positioned -60 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SingleTeam=0}] positioned -60 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
 
 # Gates
 scoreboard players set @e[type=armor_stand,name=Gate] Gate 1
