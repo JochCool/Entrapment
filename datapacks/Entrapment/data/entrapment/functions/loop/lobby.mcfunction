@@ -60,49 +60,17 @@ execute if entity @a[scores={HelpPos=1..}] run function entrapment:lobby/tutoria
 
 # Operator actions:
 scoreboard players enable @a Action
-scoreboard players enable @a[scores={Op=1..}] ArenaSelection
-# Action 1 - Select map
-execute if entity @a[scores={Action=1,Op=1..}] run function entrapment:control/selectarena
-execute if entity @p[scores={Op=1..,ArenaSelection=1..}] run function entrapment:lobby/arenaselected
-# Action 2 - Cycle game length
-execute if entity @a[scores={Action=2,Op=1..}] run function entrapment:control/cyclelength
 # Action 3 - Ready check
 execute if entity @a[scores={Action=3,Op=1..}] run function entrapment:control/readycheck
-# Action 4 - Random arena
-execute if entity @a[scores={Action=4,Op=1..}] run function entrapment:control/randomarena 
-# Action 5 - Cycle additional game time
-execute if entity @a[scores={Action=5,Op=1..}] run function entrapment:control/cycleaddedtime
-# Action 6 - Previous arena
-execute if entity @a[scores={Action=6,Op=1..}] run function entrapment:control/previousarena
-# Action 7 - Next arena
-execute if entity @a[scores={Action=7,Op=1..}] run function entrapment:control/nextarena
-# Action 8 - Cycle max time added 
-execute if entity @a[scores={Action=8,Op=1..}] run function entrapment:control/cyclemaxtimeadded
-# Action 9 - Cycle danger time increase
-execute if entity @a[scores={Action=9,Op=1..}] run function entrapment:control/cycledangertimeincrease
-# Action 10 - Cycle min safe time
-execute if entity @a[scores={Action=10,Op=1..}] run function entrapment:control/cycleminsafetime
-# Action 11 - Cycle rounds before danger time increase
-execute if entity @a[scores={Action=11,Op=1..}] run function entrapment:control/cyclesaferounds
-# Action 12 - Toggle friendly fire
-execute if entity @a[scores={Action=12,Op=1..}] run function entrapment:control/togglefriendlyfire
-# Action 13 - Toggle spectator lock
-execute if entity @a[scores={Action=13,Op=1..}] run function entrapment:control/togglespectators
-
-# Realms special case:
-#scoreboard players set @a Op 2
 
 # Op management
 
+scoreboard players set JochCool Op 2
+scoreboard players set JochTwo Op 2
 scoreboard players add @a Op 0
-tellraw @a[scores={Op=0,Action=1..}] [{"text":"Game settings can only be changed by operators. If you are\nan operator, ","color":"red"},{"text":"click here to authenticate","color":"gold","clickEvent":{"action":"run_command","value":"/scoreboard players set @p Op 1"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Click to register as an operator"}]}}},{"text":" and then try again.","color":"red"}]
-execute if entity @a[scores={Op=1}] run tellraw @a[scores={Op=1..}] ["",{"selector":"@a[scores={Op=1}]","color":"yellow"},{"text":" is now a game operator.","color":"none"}]
-scoreboard players set @a[scores={Op=1}] Op 2
+tellraw @a[scores={Op=0,Action=1..}] {"text":"Game settings can only be changed by operators.","color":"red"}
 
 scoreboard players reset @a[scores={Action=1..}] Action
-
-# Keep non-ops away from signs
-execute as @a[scores={Op=0},x=-4,y=249,z=143,dx=9,dy=7,dz=3] at @s run teleport @s ~ ~ ~-0.5
 
 # Keep players in lobby
 
