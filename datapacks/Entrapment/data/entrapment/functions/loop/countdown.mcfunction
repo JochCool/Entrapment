@@ -12,11 +12,11 @@ execute if score $Game Tick matches 380 run title @a title [{"text":"1"}]
 execute if score $Game Tick matches 400 run function entrapment:game/startgame
 
 # Countdown sounds
-execute if score $Game Tick matches 300 as @a at @s run playsound minecraft:block.note.hat master @s
-execute if score $Game Tick matches 320 as @a at @s run playsound minecraft:block.note.hat master @s
-execute if score $Game Tick matches 340 as @a at @s run playsound minecraft:block.note.hat master @s
-execute if score $Game Tick matches 360 as @a at @s run playsound minecraft:block.note.hat master @s
-execute if score $Game Tick matches 380 as @a at @s run playsound minecraft:block.note.hat master @s
+execute if score $Game Tick matches 300 as @a at @s run playsound minecraft:block.note_block.hat master @s
+execute if score $Game Tick matches 320 as @a at @s run playsound minecraft:block.note_block.hat master @s
+execute if score $Game Tick matches 340 as @a at @s run playsound minecraft:block.note_block.hat master @s
+execute if score $Game Tick matches 360 as @a at @s run playsound minecraft:block.note_block.hat master @s
+execute if score $Game Tick matches 380 as @a at @s run playsound minecraft:block.note_block.hat master @s
 
 # Player control
 
