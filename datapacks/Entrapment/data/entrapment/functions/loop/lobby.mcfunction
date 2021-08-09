@@ -6,22 +6,6 @@ function entrapment:loop/loadarena
 tp @e[type=armor_stand,name=JoinBlue] -13 251 130
 tp @e[type=armor_stand,name=JoinRed] 13 251 130
 
-# Team joining - particles
-execute at @e[type=armor_stand,name=JoinBlue] run particle enchanted_hit ~ ~1 ~ 1 1 1 0 5 force
-execute at @e[type=armor_stand,name=JoinRed] run particle crit ~ ~1 ~ 1 1 1 0 5 force
-execute at @e[type=armor_stand,name=JoinNone] run particle ambient_entity_effect ~ ~1 ~ 1 1 1 0 5 force
-
-# Team joining - leave teams
-execute at @e[type=armor_stand,name=JoinBlue] run team leave @p[distance=..4,team=!blue]
-execute at @e[type=armor_stand,name=JoinRed] run team leave @p[distance=..4,team=!red]
-execute at @e[type=armor_stand,name=JoinNone] run team leave @p[distance=..4,team=!none]
-
-# Join messages
-execute at @e[type=armor_stand,name=JoinRed] if entity @p[distance=..4,team=!red] run tellraw @a [{"selector":"@p[distance=..4,team=!red]","color":"red"},{"text":" has joined team ","color":"white"},{"text":"Redstone!","color":"red"}]
-execute at @e[type=armor_stand,name=JoinBlue] if entity @p[distance=..4,team=!blue] run tellraw @a [{"selector":"@p[distance=..4,team=!blue]","color":"blue"},{"text":" has joined team ","color":"white"},{"text":"Lapis!","color":"blue"}]
-execute at @e[type=armor_stand,name=JoinRed] run team join red @p[distance=..4,team=!red]
-execute at @e[type=armor_stand,name=JoinBlue] run team join blue @p[distance=..4,team=!blue]
-
 # Player states
 
 # Move everyone to adventure mode

@@ -5,12 +5,10 @@ tp @a[gamemode=survival,x=1008,y=-10,z=0,dx=272,dy=255,dz=272] 0 251 117 0 0
 tp @a[gamemode=spectator,x=1008,y=-10,z=0,dx=272,dy=255,dz=272] 0 251 117 0 0
 tp @a[gamemode=adventure,x=1008,y=-10,z=0,dx=272,dy=255,dz=272] 0 251 117 0 0
 
-# Auto-join spectators
-execute if entity @p[scores={NotPlaying=1..}] run tellraw @a [{"selector":"@a[scores={NotPlaying=1..}]","color":"gray"},{"text":" has joined ","color":"white"},{"text":"Spectators!","color":"gray"}]
-team join none @a[scores={NotPlaying=1..}]
-execute if entity @p[team=] run tellraw @a [{"selector":"@a[team=]","color":"gray"},{"text":" has joined ","color":"white"},{"text":"Spectators!","color":"gray"}]
+# Team joining
+team join red @a[scores={Team=1}]
+team join blue @a[scores={Team=2}]
 team join none @a[team=]
-scoreboard players reset @a[scores={NotPlaying=1..}] NotPlaying
 
 # Reset lobby paintings & item frames
 execute as @e[type=item_frame,x=-11,y=251,z=118,dx=22,dy=4,dz=28] run data merge entity @s {ItemRotation:0b}
@@ -34,6 +32,8 @@ execute if score @e[type=armor_stand,name=Game,limit=1] State matches 1 run func
 execute if score @e[type=armor_stand,name=Game,limit=1] State matches 2 run function entrapment:loop/countdown
 execute if score @e[type=armor_stand,name=Game,limit=1] State matches 3 run function entrapment:loop/game
 execute if score @e[type=armor_stand,name=Game,limit=1] State matches 4 run function entrapment:loop/postgame
+
+scoreboard players reset @a[scores={NotPlaying=1..}] NotPlaying
 
 # Debug mode
 execute if entity @a[name=slicedlime,gamemode=creative] run gamerule sendCommandFeedback true

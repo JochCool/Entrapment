@@ -9,7 +9,6 @@ execute as @e[type=armor_stand,name=JoinRed,scores={Count=1..}] run scoreboard p
 execute as @e[type=armor_stand,name=JoinBlue,scores={Count=1}] run scoreboard players add @a[team=blue] Wins 1
 
 # Cleanup
-team leave *
 tp @a 0 251 117 0 0
 kill @e[type=!player,x=-60,y=220,z=-10,dx=40,dy=35,dz=106]
 kill @e[type=!player,x=20,y=220,z=-10,dx=40,dy=35,dz=106]

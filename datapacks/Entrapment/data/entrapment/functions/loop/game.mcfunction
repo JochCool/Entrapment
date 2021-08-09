@@ -2,6 +2,7 @@
 gamemode survival @a[team=!none,gamemode=adventure]
 gamemode spectator @a[team=none,gamemode=adventure]
 gamemode spectator @a[team=none,gamemode=survival]
+gamemode spectator @a[scores={NotPlaying=1..}]
 gamemode spectator @a[scores={Deaths=1..}]
 scoreboard players reset @a[scores={Deaths=1..}] Deaths
 effect give @a saturation 3 1 true
