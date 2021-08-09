@@ -56,4 +56,4 @@ execute at @e[type=armor_stand,name=Gate] positioned ~-2 ~ ~ run fill ~ ~ ~ ~14 
 # Move world border away
 worldborder set 60000000
 
-execute as @a at @s run playsound minecraft:block.note.pling master @s ~ ~ ~ 100 1 1
+execute as @a at @s run playsound minecraft:block.note_block.pling master @s ~ ~ ~ 100 1 1
