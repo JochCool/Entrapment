@@ -34,8 +34,8 @@ scoreboard players set @a[tag=NotReadyHelmet] ReadyCheck -1
 scoreboard players set @a[tag=NotReadyHelmet] Ready 2
 
 # Total ready check tracking
-execute store result score @e[type=armor_stand,name=JoinRed,limit=1] Ready if entity @a[team=red,scores={Ready=1}]
-execute store result score @e[type=armor_stand,name=JoinBlue,limit=1] Ready if entity @a[team=blue,scores={Ready=1}]
+execute store result score @e[type=armor_stand,name=HomeTeam,limit=1] Ready if entity @a[team=home,scores={Ready=1}]
+execute store result score @e[type=armor_stand,name=AwayTeam,limit=1] Ready if entity @a[team=away,scores={Ready=1}]
 
 # Someone was not ready?
 execute if score @e[type=armor_stand,name=Wait,limit=1] Tick matches 300 if entity @p[team=!none,scores={Ready=2}] run scoreboard players set @e[type=armor_stand,name=Game] Ready 2
@@ -44,7 +44,7 @@ execute if score @e[type=armor_stand,name=Wait,limit=1] Tick matches 300 if enti
 execute if score @e[type=armor_stand,name=Wait,limit=1] Tick matches 300 unless entity @p[team=!none,scores={Ready=2}] run scoreboard players set @e[type=armor_stand,name=Game] Ready 3
 
 # Everyone was ready!
-execute if score @e[type=armor_stand,name=JoinRed,limit=1] Ready = @e[type=armor_stand,name=JoinRed,limit=1] Count if score @e[type=armor_stand,name=JoinBlue,limit=1] Ready = @e[type=armor_stand,name=JoinBlue,limit=1] Count run scoreboard players set @e[type=armor_stand,name=Game] Ready 1
+execute if score @e[type=armor_stand,name=HomeTeam,limit=1] Ready = @e[type=armor_stand,name=HomeTeam,limit=1] Count if score @e[type=armor_stand,name=AwayTeam,limit=1] Ready = @e[type=armor_stand,name=AwayTeam,limit=1] Count run scoreboard players set @e[type=armor_stand,name=Game] Ready 1
 
 # Ready check failed actions
 execute if score @e[type=armor_stand,name=Game,limit=1] Ready matches 2 run tellraw @a [{"text":"Ready check failed. Not ready: "},{"selector":"@a[scores={Ready=2}]"},{"text":"."}]

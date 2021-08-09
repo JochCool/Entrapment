@@ -1,12 +1,12 @@
 # Win messages
-execute if entity @e[type=armor_stand,name=JoinRed,scores={Count=1..}] run title @a subtitle [{"text":"Team Redstone wins!","color":"red"}]
-execute if entity @e[type=armor_stand,name=JoinBlue,scores={Count=1..}] run title @a subtitle [{"text":"Team Lapis wins!","color":"blue"}]
+execute if entity @e[type=armor_stand,name=HomeTeam,scores={Count=1..}] run title @a subtitle {"nbt":"HomeWin","storage":"entrapment:teams","interpret":true}
+execute if entity @e[type=armor_stand,name=AwayTeam,scores={Count=1..}] run title @a subtitle {"nbt":"AwayWin","storage":"entrapment:teams","interpret":true}
 title @a title [{"text":"Game Over"}]
-execute if entity @e[type=armor_stand,name=JoinRed,scores={Count=1..}] run tellraw @a [{"text":"Team Redstone wins!","color":"red"}]
-execute if entity @e[type=armor_stand,name=JoinBlue,scores={Count=1..}] run tellraw @a [{"text":"Team Lapis wins!","color":"blue"}]
+execute if entity @e[type=armor_stand,name=HomeTeam,scores={Count=1..}] run tellraw @a {"nbt":"HomeWin","storage":"entrapment:teams","interpret":true}
+execute if entity @e[type=armor_stand,name=AwayTeam,scores={Count=1..}] run tellraw @a {"nbt":"AwayWin","storage":"entrapment:teams","interpret":true}
 
-execute as @e[type=armor_stand,name=JoinRed,scores={Count=1..}] run scoreboard players add @a[team=red] Wins 1
-execute as @e[type=armor_stand,name=JoinBlue,scores={Count=1}] run scoreboard players add @a[team=blue] Wins 1
+execute as @e[type=armor_stand,name=HomeTeam,scores={Count=1..}] run scoreboard players add @a[team=home] Wins 1
+execute as @e[type=armor_stand,name=AwayTeam,scores={Count=1}] run scoreboard players add @a[team=away] Wins 1
 
 # Cleanup
 tp @a 0 251 117 0 0

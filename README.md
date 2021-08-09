@@ -1,7 +1,7 @@
 # Entrapment
 Minecraft Entrapment minigame. Originally created by slicedlime, but upgraded to Minecraft 1.17 and used for the Entrapment Fan Tournament by JochCool.
 
-Before using this map, please first fill in the blanks in the [setup function](datapacks/Entrapment/data/entrapment/functions/setup.mcfunction) and then run the function in-game.
+Before using this map, you must first fill in the blanks in the [setup function](datapacks/Entrapment/data/entrapment/functions/setup.mcfunction), and then run the function in-game.
 
 Videos of the matches will be uploaded to [JochCool's YouTube channel](https://www.youtube.com/channel/UC6e7oGAoGGk7TU3ycCVlijw). To participate in the tournament, join [the Discord server](https://discord.gg/jQ94NNttvz).
 

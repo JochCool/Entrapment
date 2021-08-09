@@ -16,3 +16,8 @@ scoreboard players set ___ Team 2
 scoreboard players set ___ Team 2
 scoreboard players set ___ Team 2
 scoreboard players set ___ Team 2
+
+# ADD THE COLOURS AND NAMES OF THE TEAMS
+team modify home color ___
+team modify away color ___
+data merge storage entrapment:teams {HomeWin:'{"text":"___ wins!","color":"___"}',AwayWin:'{"text":"___ wins!","color":"___"}'}

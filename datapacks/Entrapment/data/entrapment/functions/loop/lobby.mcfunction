@@ -3,8 +3,8 @@
 scoreboard players add $Game Tick 1
 function entrapment:loop/loadarena
 
-tp @e[type=armor_stand,name=JoinBlue] -13 251 130
-tp @e[type=armor_stand,name=JoinRed] 13 251 130
+tp @e[type=armor_stand,name=HomeTeam] 13 251 130
+tp @e[type=armor_stand,name=AwayTeam] -13 251 130
 
 # Player states
 
@@ -24,8 +24,8 @@ experience set @a 0 levels
 experience set @a 0 points
 
 # Team counts
-execute store result score @e[type=armor_stand,name=JoinRed] Count if entity @a[team=red]
-execute store result score @e[type=armor_stand,name=JoinBlue] Count if entity @a[team=blue]
+execute store result score @e[type=armor_stand,name=HomeTeam] Count if entity @a[team=home]
+execute store result score @e[type=armor_stand,name=AwayTeam] Count if entity @a[team=away]
 
 # Tutorial control
 scoreboard players enable @a Help

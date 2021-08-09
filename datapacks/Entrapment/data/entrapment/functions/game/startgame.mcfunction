@@ -34,12 +34,12 @@ scoreboard players add Remaining SafeRounds 1
 scoreboard players set Total Round 0
 
 # Team setup
-team modify red collisionRule always
-team modify blue collisionRule always
-execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 0 run team modify red friendlyFire false
-execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 0 run team modify blue friendlyFire false
-execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 1 run team modify red friendlyFire true
-execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 1 run team modify blue friendlyFire true
+team modify home collisionRule always
+team modify away collisionRule always
+execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 0 run team modify home friendlyFire false
+execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 0 run team modify away friendlyFire false
+execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 1 run team modify home friendlyFire true
+execute if score @e[type=armor_stand,name=Game,limit=1] FriendlyFire matches 1 run team modify away friendlyFire true
 
 # Trigger new round
 function entrapment:game/newround

@@ -18,7 +18,7 @@ spawnpoint @a 0 251 117
 clear @a
 
 # Turn off collisions
-team modify blue collisionRule never
-team modify red collisionRule never
+team modify home collisionRule never
+team modify away collisionRule never
 
 scoreboard objectives setdisplay list Wins

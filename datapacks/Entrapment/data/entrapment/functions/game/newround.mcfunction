@@ -6,10 +6,10 @@ scoreboard players add @e[type=armor_stand,name=Game] Round 1
 scoreboard players set @e[type=armor_stand,name=Game,scores={Round=3}] Round 1
 
 # Team teleports
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=red,gamemode=!creative] -40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=blue,gamemode=!creative] -40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=red,gamemode=!creative] 40 236 -8 0 0
-execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=blue,gamemode=!creative] 40 236 -8 0 0
+execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=home,gamemode=!creative] -40 236 -8 0 0
+execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=away,gamemode=!creative] -40 236 -8 0 0
+execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 2 run tp @a[team=home,gamemode=!creative] 40 236 -8 0 0
+execute if score @e[type=armor_stand,name=Game,limit=1] Round matches 1 run tp @a[team=away,gamemode=!creative] 40 236 -8 0 0
 execute as @a[gamemode=survival] run spawnpoint @s
 
 # Resistance effect to all players to get around bad interpolation causing withering effects
