@@ -5,9 +5,6 @@ title @a title [{"text":"Game Over"}]
 execute if entity @e[type=armor_stand,name=HomeTeam,scores={Count=1..}] run tellraw @a {"nbt":"HomeWin","storage":"entrapment:teams","interpret":true}
 execute if entity @e[type=armor_stand,name=AwayTeam,scores={Count=1..}] run tellraw @a {"nbt":"AwayWin","storage":"entrapment:teams","interpret":true}
 
-execute as @e[type=armor_stand,name=HomeTeam,scores={Count=1..}] run scoreboard players add @a[team=home] Wins 1
-execute as @e[type=armor_stand,name=AwayTeam,scores={Count=1}] run scoreboard players add @a[team=away] Wins 1
-
 # Cleanup
 tp @a 0 251 117 0 0
 kill @e[type=!player,x=-60,y=220,z=-10,dx=40,dy=35,dz=106]

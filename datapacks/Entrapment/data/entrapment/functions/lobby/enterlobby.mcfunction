@@ -20,5 +20,3 @@ clear @a
 # Turn off collisions
 team modify home collisionRule never
 team modify away collisionRule never
-
-scoreboard objectives setdisplay list Wins
