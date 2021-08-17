@@ -21,3 +21,8 @@ scoreboard players set ___ Team 2
 team modify home color ___
 team modify away color ___
 data merge storage entrapment:teams {HomeWin:'{"text":"___ wins!","color":"___"}',AwayWin:'{"text":"___ wins!","color":"___"}'}
+setblock 3 249 125 minecraft:structure_block[mode=load]{ignoreEntities:1b,mode:"LOAD",name:"entrapment:teams/___",posX:0,posY:0,posZ:0}
+setblock -3 249 135 minecraft:structure_block[mode=load]{ignoreEntities:1b,mode:"LOAD",name:"entrapment:teams/___",posX:0,posY:0,posZ:0,rotation:"CLOCKWISE_180"}
+
+setblock 3 250 125 minecraft:redstone_block
+setblock -3 250 135 minecraft:redstone_block
