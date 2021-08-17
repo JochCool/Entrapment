@@ -27,18 +27,8 @@ experience set @a 0 points
 execute store result score @e[type=armor_stand,name=HomeTeam] Count if entity @a[team=home]
 execute store result score @e[type=armor_stand,name=AwayTeam] Count if entity @a[team=away]
 
-# Tutorial control
-scoreboard players enable @a Help
-scoreboard players add @a HelpPos 0
-scoreboard players set @a[scores={HelpPos=..0,Help=1..}] HelpPos 50
-scoreboard players add @a[scores={HelpPos=1..}] HelpPos 1
-
-tellraw @a[tag=!HasPreviouslyJoined] ["",{"text":"\nGreetings and welcome to "},{"text":"Entrapment","color":"green"},{"text":" by ","color":"none"},{"text":"slicedlime","color":"gold","clickEvent":{"action":"open_url","value":"http://www.youtube.com/slicedlime"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"slicedlime on YouTube"}]}}},{"text":". If you want\nhelp, please ","color":"none"},{"text":"click here","color":"gold","clickEvent":{"action":"run_command","value":"/trigger Help set 1"},"hoverEvent":{"action":"show_text","value":{"text":"","extra":[{"text":"Display help"}]}}},{"text":" or click the Help sign in the lobby.\n","color":"none"}]
+tellraw @a[tag=!HasPreviouslyJoined] ["\nGreetings and welcome to the ",{"text":"Entrapment Fan Tournament","color":"dark_green"},"!\n"]
 tag @a[tag=!HasPreviouslyJoined] add HasPreviouslyJoined
-
-scoreboard players set @a Help 0
-
-execute if entity @a[scores={HelpPos=1..}] run function entrapment:lobby/tutorial
 
 # Map control
 
@@ -61,7 +51,7 @@ scoreboard players reset @a[scores={Action=1..}] Action
 scoreboard players set @a InLobby 0
 scoreboard players set @a[x=-4,y=251,z=116,dx=9,dy=4,dz=30] InLobby 1
 scoreboard players set @a[x=-14,y=251,z=125,dx=32,dy=4,dz=11] InLobby 1
-teleport @a[gamemode=adventure,scores={InLobby=0,HelpPos=0}] 0 251 117 0 0
+teleport @a[gamemode=adventure,scores={InLobby=0}] 0 251 117 0 0
 
 # Silence item frames
 execute as @e[type=item_frame] run data merge entity @s {Silent:1}
