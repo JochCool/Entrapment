@@ -2,7 +2,6 @@
 gamemode survival @a[team=!none,gamemode=adventure]
 gamemode spectator @a[team=none,gamemode=adventure]
 gamemode spectator @a[team=none,gamemode=survival]
-gamemode spectator @a[scores={NotPlaying=1..}]
 gamemode spectator @a[scores={Deaths=1..}]
 scoreboard players reset @a[scores={Deaths=1..}] Deaths
 effect give @a saturation 3 1 true
@@ -147,7 +146,7 @@ clear @a totem_of_undying
 execute store result score @e[type=armor_stand,name=HomeTeam] Count if entity @a[team=home,gamemode=!spectator]
 execute store result score @e[type=armor_stand,name=AwayTeam] Count if entity @a[team=away,gamemode=!spectator]
 
-execute as @e[type=armor_stand,scores={Team=1..,Count=0},limit=1] run function entrapment:game/gamewon
+execute if entity @e[type=armor_stand,name=Game,scores={State=3}] as @e[type=armor_stand,scores={Team=1..,Count=0},limit=1] run function entrapment:game/gamewon
 
 # Protect lobby
 kill @e[type=!player,x=-70,y=0,z=100,dx=140,dy=512,dz=10]
