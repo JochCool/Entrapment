@@ -37,11 +37,6 @@ scoreboard players enable @a Action
 # Action 3 - Ready check
 execute if entity @a[scores={Action=3,Op=1..}] run function entrapment:control/readycheck
 
-# Op management
-
-scoreboard players set JochCool Op 2
-scoreboard players set JochTwo Op 2
-scoreboard players add @a Op 0
 tellraw @a[scores={Op=0,Action=1..}] {"text":"Game settings can only be changed by operators.","color":"red"}
 
 scoreboard players reset @a[scores={Action=1..}] Action

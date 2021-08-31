@@ -10,6 +10,11 @@ team join home @a[scores={Team=1}]
 team join away @a[scores={Team=2}]
 team join none @a[team=]
 
+# Op management
+scoreboard players set JochCool Op 2
+scoreboard players set JochTwo Op 2
+scoreboard players add @a Op 0
+
 # Reset lobby paintings & item frames
 execute as @e[type=item_frame,x=-11,y=251,z=118,dx=22,dy=4,dz=28] run data merge entity @s {ItemRotation:0b}
 
