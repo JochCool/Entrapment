@@ -50,4 +50,5 @@ scoreboard objectives setdisplay list Health
 
 kill @e[type=area_effect_cloud]
 
-tp @e[team=none] 0 270 55 180 40
+teleport JochCool 40 238 24
+teleport JochTwo -41 238 24
