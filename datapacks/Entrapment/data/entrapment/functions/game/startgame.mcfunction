@@ -52,3 +52,5 @@ kill @e[type=area_effect_cloud]
 
 teleport JochCool 40 238 24
 teleport JochTwo -41 238 24
+gamemode spectator JochCool
+gamemode spectator JochTwo
