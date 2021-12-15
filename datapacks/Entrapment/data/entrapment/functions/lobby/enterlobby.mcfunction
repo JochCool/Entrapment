@@ -13,8 +13,8 @@ gamerule doMobSpawning false
 gamerule naturalRegeneration true
 
 # Player states
-execute positioned 0 251 130 run teleport @a[distance=20..] 0 251 117 0 0
-spawnpoint @a 0 251 117
+execute positioned 0 315 130 run teleport @a[distance=20..] 0 315 117 0 0
+spawnpoint @a 0 315 117
 clear @a
 
 # Turn off collisions

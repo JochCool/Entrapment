@@ -22,5 +22,5 @@ scoreboard players set @a[team=!none] ReadyCheck 1
 scoreboard objectives setdisplay sidebar ReadyCheck
 
 # Tp players back from tutorial and cancel tutorial
-teleport @a[scores={HelpPos=1..}] 0 251 122 0 0
+teleport @a[scores={HelpPos=1..}] 0 315 122 0 0
 scoreboard players set @a HelpPos 0

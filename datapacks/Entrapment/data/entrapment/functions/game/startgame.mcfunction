@@ -19,8 +19,8 @@ gamerule doDaylightCycle true
 gamemode survival @a[team=!none]
 
 # Summon AS markers for gates
-summon armor_stand -45 235 -2 {CustomName:'"Gate"',NoGravity:1,Invisible:1,Marker:1,Invulnerable:1}
-summon armor_stand 35 235 -2 {CustomName:'"Gate"',NoGravity:1,Invisible:1,Marker:1,Invulnerable:1}
+summon armor_stand -45 299 -2 {CustomName:'"Gate"',NoGravity:1,Invisible:1,Marker:1,Invulnerable:1}
+summon armor_stand 35 299 -2 {CustomName:'"Gate"',NoGravity:1,Invisible:1,Marker:1,Invulnerable:1}
 
 # Set up time tracking
 scoreboard players set AddedTime TimeIncrease 0
@@ -50,4 +50,4 @@ scoreboard objectives setdisplay list Health
 
 kill @e[type=area_effect_cloud]
 
-tp @e[team=none] 0 270 55 180 40
+tp @e[team=none] 0 334 55 180 40

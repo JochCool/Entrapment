@@ -3,8 +3,8 @@
 scoreboard players add $Game Tick 1
 function entrapment:loop/loadarena
 
-tp @e[type=armor_stand,name=JoinBlue] -13 251 130
-tp @e[type=armor_stand,name=JoinRed] 13 251 130
+tp @e[type=armor_stand,name=JoinBlue] -13 315 130
+tp @e[type=armor_stand,name=JoinRed] 13 315 130
 
 # Team joining - particles
 execute at @e[type=armor_stand,name=JoinBlue] run particle enchanted_hit ~ ~1 ~ 1 1 1 0 5 force
@@ -102,14 +102,14 @@ scoreboard players set @a[scores={Op=1}] Op 2
 scoreboard players reset @a[scores={Action=1..}] Action
 
 # Keep non-ops away from signs
-execute as @a[scores={Op=0},x=-4,y=249,z=143,dx=9,dy=7,dz=3] at @s run teleport @s ~ ~ ~-0.5
+execute as @a[scores={Op=0},x=-4,y=313,z=143,dx=9,dy=7,dz=3] at @s run teleport @s ~ ~ ~-0.5
 
 # Keep players in lobby
 
 scoreboard players set @a InLobby 0
-scoreboard players set @a[x=-4,y=251,z=116,dx=9,dy=4,dz=30] InLobby 1
-scoreboard players set @a[x=-14,y=251,z=125,dx=32,dy=4,dz=11] InLobby 1
-teleport @a[gamemode=adventure,scores={InLobby=0,HelpPos=0}] 0 251 117 0 0
+scoreboard players set @a[x=-4,y=315,z=116,dx=9,dy=4,dz=30] InLobby 1
+scoreboard players set @a[x=-14,y=315,z=125,dx=32,dy=4,dz=11] InLobby 1
+teleport @a[gamemode=adventure,scores={InLobby=0,HelpPos=0}] 0 315 117 0 0
 
 # Silence item frames
 execute as @e[type=item_frame] run data merge entity @s {Silent:1}

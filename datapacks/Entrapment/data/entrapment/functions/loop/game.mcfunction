@@ -28,13 +28,13 @@ execute if score @e[name=Game,type=armor_stand,limit=1] Tick matches 19 as @a at
 title @a actionbar [{"text":"Round "},{"score":{"objective":"Round","name":"Total"}}]
 
 # Spawn area lamp protection
-kill @e[type=minecraft:item,x=-48,y=230,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:redstone_lamp"}}]
-kill @e[type=minecraft:item,x=-48,y=230,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:sea_lantern"}}]
-kill @e[type=minecraft:item,x=-48,y=230,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:prismarine_crystals"}}]
+kill @e[type=minecraft:item,x=-48,y=294,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:redstone_lamp"}}]
+kill @e[type=minecraft:item,x=-48,y=294,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:sea_lantern"}}]
+kill @e[type=minecraft:item,x=-48,y=294,z=-3,dx=96,dy=15,dz=6,nbt={Item:{id:"minecraft:prismarine_crystals"}}]
 
 # Chests
-execute as @e[type=armor_stand,name=NewNTChest,x=-59,y=220,z=1,dx=38,dy=34,dz=94,nbt={OnGround:1b}] at @s if block ~ ~ ~ air run data merge entity @s {CustomName:'"TChest"'}
-execute as @e[type=armor_stand,name=NewPTChest,x=21,y=220,z=0,dx=96,dy=34,dz=96,nbt={OnGround:1b}] at @s if block ~ ~ ~ air run data merge entity @s {CustomName:'"TChest"'}
+execute as @e[type=armor_stand,name=NewNTChest,x=-59,y=284,z=1,dx=38,dy=34,dz=94,nbt={OnGround:1b}] at @s if block ~ ~ ~ air run data merge entity @s {CustomName:'"TChest"'}
+execute as @e[type=armor_stand,name=NewPTChest,x=21,y=284,z=0,dx=96,dy=34,dz=96,nbt={OnGround:1b}] at @s if block ~ ~ ~ air run data merge entity @s {CustomName:'"TChest"'}
 
 spreadplayers -40 47 1 46 false @e[type=armor_stand,name=NewNTChest,nbt={OnGround:1b}]
 spreadplayers 40 47 1 46 false @e[type=armor_stand,name=NewPTChest,nbt={OnGround:1b}]
@@ -59,24 +59,24 @@ execute as @a at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 air replace nether_portal
 
 # Player confinement
 scoreboard players set @a InArena 0
-scoreboard players set @a[x=-59,y=221,z=1,dx=38,dy=50,dz=94] InArena 1
-scoreboard players set @a[x=21,y=221,z=1,dx=38,dy=50,dz=94] InArena 1
-scoreboard players set @a[x=-44,y=236,z=-8,dx=8,dy=5,dz=8] InArena 1
-scoreboard players set @a[x=36,y=236,z=-8,dx=8,dy=5,dz=8] InArena 1
+scoreboard players set @a[x=-59,y=285,z=1,dx=38,dy=50,dz=94] InArena 1
+scoreboard players set @a[x=21,y=285,z=1,dx=38,dy=50,dz=94] InArena 1
+scoreboard players set @a[x=-44,y=300,z=-8,dx=8,dy=5,dz=8] InArena 1
+scoreboard players set @a[x=36,y=300,z=-8,dx=8,dy=5,dz=8] InArena 1
 scoreboard players set @a[scores={InArena=1}] OutOfMap 0
 scoreboard players add @a[scores={InArena=0}] OutOfMap 1
 title @a[gamemode=survival,scores={OutOfMap=1}] title [{"text":"Return to the arena!","color":"red"}]
 effect give @a[gamemode=survival,scores={OutOfMap=100..}] wither 1 2
 
 # Confine spectators
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=red,scores={InArena=0}] 40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] run teleport @a[gamemode=spectator,team=blue,scores={InArena=0}] 40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned 20 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=blue,gamemode=spectator,dx=42,dy=500,dz=110] 40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2,SpectatorLock=1}] positioned -60 0 -10 run teleport @a[team=red,gamemode=spectator,dx=42,dy=500,dz=110] 40 300 -8 0 0
 
 # Locked on player mode:
 execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] run tag @a[gamemode=spectator] remove spectatingplayer
@@ -86,10 +86,10 @@ execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] as @a[
 execute if entity @e[type=armor_stand,name=Game,scores={SpectatorLock=2}] as @a[gamemode=spectator,tag=!spectatingplayer,team=blue] at @s run spectate @p[team=blue,gamemode=survival]
 
 # Tp players in wrong arena (reconnects)
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned 20 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned 20 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] -40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned -60 220 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
-execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned -60 220 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] 40 236 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned 20 284 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned 20 284 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] -40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=1}] positioned -60 284 -10 run teleport @a[team=blue,gamemode=survival,dx=42,dy=40,dz=110] 40 300 -8 0 0
+execute if entity @e[type=armor_stand,name=Game,scores={Round=2}] positioned -60 284 -10 run teleport @a[team=red,gamemode=survival,dx=42,dy=40,dz=110] 40 300 -8 0 0
 
 # Gates
 scoreboard players set @e[type=armor_stand,name=Gate] Gate 1
@@ -114,7 +114,7 @@ execute at @e[type=armor_stand,name=Gate,scores={Gate=0}] positioned ~ ~6 ~1 run
 execute at @e[type=armor_stand,name=Gate] positioned ~1 ~1 ~ run fill ~ ~ ~ ~8 ~3 ~-6 air destroy
 execute at @e[type=armor_stand,name=Gate] positioned ~1 ~1 ~2 run fill ~ ~ ~ ~8 ~3 ~ air destroy
 scoreboard players reset * ShouldMove
-scoreboard players set @e[type=!minecraft:item,x=-45,y=235,z=-9,dx=90,dy=5,dz=8] ShouldMove 1
+scoreboard players set @e[type=!minecraft:item,x=-45,y=299,z=-9,dx=90,dy=5,dz=8] ShouldMove 1
 scoreboard players reset @e[type=minecraft:arrow,scores={ShouldMove=1}] ShouldMove
 execute as @e[scores={ShouldMove=1}] run data merge entity @s {Motion:[0d,0d,1d]}
 execute as @e[type=!player,scores={ShouldMove=1}] at @s run teleport @s ~ ~ ~0.05
@@ -153,14 +153,14 @@ kill @e[type=!player,x=-70,y=0,z=100,dx=140,dy=512,dz=10]
 kill @a[gamemode=survival,x=-70,y=0,z=100,dx=140,dy=512,dz=10]
 
 # Protect outside of arena walls
-fill 19 220 96 19 255 0 air
-fill -19 220 96 -19 255 0 air
-fill 61 220 96 61 255 0 air
-fill -61 220 96 -61 255 0 air
-fill 20 242 -1 60 255 -1 air
-fill -20 242 -1 -60 255 -1 air
-fill 20 242 97 60 255 97 air
-fill -20 242 97 -60 255 97 air
+fill 19 284 96 19 319 0 air
+fill -19 284 96 -19 319 0 air
+fill 61 284 96 61 319 0 air
+fill -61 284 96 -61 319 0 air
+fill 20 306 -1 60 319 -1 air
+fill -20 306 -1 -60 319 -1 air
+fill 20 306 97 60 319 97 air
+fill -20 306 97 -60 319 97 air
 
 # Make mobs persistent
 execute as @e[tag=!persistent] run data merge entity @s {PersistenceRequired:1b}

@@ -11,8 +11,8 @@ execute as @e[type=armor_stand,name=JoinBlue,scores={Count=1}] run scoreboard pl
 # Cleanup
 team leave *
 tp @a 0 251 117 0 0
-kill @e[type=!player,x=-60,y=220,z=-10,dx=40,dy=35,dz=106]
-kill @e[type=!player,x=20,y=220,z=-10,dx=40,dy=35,dz=106]
+kill @e[type=!player,x=-60,y=285,z=-10,dx=40,dy=35,dz=106]
+kill @e[type=!player,x=20,y=285,z=-10,dx=40,dy=35,dz=106]
 execute as @e[type=armor_stand,tag=TreasureCD] run tag @s add Treasure
 execute as @e[type=armor_stand,tag=TreasureCD] run tag @s remove TreasureCD
 scoreboard players set @e[type=armor_stand,name=Game] ResetTime 80
@@ -30,7 +30,7 @@ scoreboard players reset @a[scores={NotPlaying=1}] NotPlaying
 scoreboard players reset * Selected
 scoreboard players set @e[name=Blank,type=armor_stand] Selected 1
 
-data merge block 3 253 144 {Text1:'{"text":"Arena:","color":"white"}',Text3:'{"text":"No Arena","color":"gold","clickEvent":{"action":"run_command","value":"trigger Action set 1"}}',Text4:''}
+data merge block 3 317 144 {Text1:'{"text":"Arena:","color":"white"}',Text3:'{"text":"No Arena","color":"gold","clickEvent":{"action":"run_command","value":"trigger Action set 1"}}',Text4:''}
 
 function entrapment:lobby/applypreview
 
