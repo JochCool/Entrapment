@@ -19,11 +19,11 @@ Most versions are accompanied by a Realms version, whose only difference is that
 ## Updated versions by JochCool and Kri5t0f
 All these versions were based off Entrapment v1.5.
 * [Minecraft 1.17.1](https://github.com/Kri5t0fK/Entrapment/archive/refs/heads/minecraft-1.17.zip)
-  * [Fan Tournament](https://github.com/JochCool/Entrapment/archive/refs/heads/fan-tournament.zip)
 * [Minecraft 1.18.1](https://github.com/JochCool/Entrapment/archive/refs/heads/minecraft-1.18.zip)
 * [Minecraft 1.19.2](https://github.com/JochCool/Entrapment/archive/refs/heads/minecraft-1.19.zip)
 
 ## Other versions
 
+* [Fan Tournament (Minecraft 1.17.1)](https://github.com/JochCool/Entrapment/archive/refs/heads/fan-tournament.zip), version used for the [YouTube series](https://www.youtube.com/playlist?list=PLoNdUvAbWkKbYI_wgEmSgMZHbsLeN0EWt)
 * [Single-team (Minecraft 1.17.1)](https://github.com/JochCool/Entrapment/archive/refs/heads/single-team.zip), where you face your own traps (useful for practice)
-* [Kri5t0f's chest system](https://github.com/Kri5t0fK/Entrapment/archive/refs/heads/chest-system.zip), containing new and diverse loot chests
+* [Kri5t0f's chest system (Minecraft 1.17.1)](https://github.com/Kri5t0fK/Entrapment/archive/refs/heads/chest-system.zip), containing new and diverse loot chests
